@@ -21,13 +21,15 @@ public class Wrestler {
 	
 	public void display(){
 		System.out.println("+++++++++++++++++++++++++++++++++++++++++++++++++++++++++\n");
-		System.out.println ("Name = "+this.name+"\nRank = "+this.rank+"\nHeight = "+this.height+" m\nWeight = "+this.weight+"kgs \nMathces Won = "+this.matchesWon+"\nMathces Lost = "+this.matchesLost+"\nTotal Matches Played = "+this.totalMatches);
+		System.out.println ("Name = "+this.name+"\nRank = "+this.rank+"\nHeight = "+this.height+" m\nWeight = "+this.weight+" kgs\nMathces Won = "+this.matchesWon+"\nMathces Lost = "+this.matchesLost+"\nTotal Matches Played = "+this.totalMatches);
 		System.out.println("\n+++++++++++++++++++++++++++++++++++++++++++++++++++++++++");
 	}
 	
 	public boolean wrestle (int choice, Wrestler obj) {
 		//some code here
 		return true;
+		//Returns true if 'this' wrestler wins
+		//Returns false if 'obj' wins
 	}
 	
 }
