@@ -26,10 +26,53 @@ public class Wrestler {
 	}
 	
 	public boolean wrestle (int choice, Wrestler obj) {
-		//some code here
-		return true;
+		boolean result = false;
+		switch (choice) {
+		case 1 : if (this.rank < obj.rank)
+			result = true;
+		else
+			result = false;
+		break;
+		
+		
+		case 2 : if (this.height > obj.height)
+			result = true;
+		else
+			result = false;
+		break;
+		
+		
+		case 3 : if (this.weight > obj.weight)
+			result = true;
+		else
+			result = false;
+		break;
+		
+		
+		case 4 : if (this.matchesWon > obj.matchesWon)
+			result = true;
+		else
+			result = false;
+		break;
+		
+		
+		case 5 : if (this.matchesLost < obj.matchesLost)
+			result = true;
+		else
+			result = false;
+		break;
+		
+		
+		case 6 : if (this.totalMatches > obj.totalMatches)
+			result = true;
+		else
+			result = false;
+		break;
+		
+		}
+		return result;
 		//Returns true if 'this' wrestler wins
-		//Returns false if 'obj' wins
+		//Returns false if 'obj' wrestler wins
 	}
 	
 }

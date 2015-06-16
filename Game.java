@@ -32,16 +32,21 @@ public class Game {
 		
 		
 		int totalWrestlers =5;
-		Wrestler wrestler1 = new Wrestler("Undertaker", 3, 2.08, 136.0, 198, 45);
-		Wrestler wrestler2 = new Wrestler("Roman Reigns", 1, 1.93, 120.0, 87, 13);
-		Wrestler wrestler3 = new Wrestler("Daniel Bryan", 2, 1.78, 90.71, 149, 41);
-		Wrestler wrestler4 = new Wrestler("Dean Ambrose", 4, 1.92, 102.0, 51, 10);
-		Wrestler wrestler5 = new Wrestler("Brock Lesnar", 5, 1.91, 134.0, 71, 30);
+		Wrestler wrestler01 = new Wrestler("Undertaker", 3, 2.08, 136.0, 198, 45);
+		Wrestler wrestler02 = new Wrestler("Roman Reigns", 1, 1.93, 120.0, 87, 13);
+		Wrestler wrestler03 = new Wrestler("Daniel Bryan", 2, 1.78, 90.71, 149, 41);
+		Wrestler wrestler04 = new Wrestler("Dean Ambrose", 4, 1.92, 102.0, 51, 10);
+		Wrestler wrestler05 = new Wrestler("Brock Lesnar", 5, 1.91, 134.0, 71, 30);
+		Wrestler wrestler06 = new Wrestler("John Cena", 6, 1.85, 114.0, 1596, 359);
+		Wrestler wrestler07 = new Wrestler("Bray Wyatt", 7, 1.90, 136.0, 204, 288);
+		Wrestler wrestler08 = new Wrestler("Seth Rollins",8, 1.85, 93.0, 431, 537);
+		Wrestler wrestler09 = new Wrestler("Paige", 9, 1.73, 54.0, 315, 205);
+		Wrestler wrestler10 = new Wrestler("Nikki Bella", 10, 1.68, 57.0, 273, 193);
 		//TODO input more wrestlers... 
 		//Wrestler Wrestler6 = new Wrestler();
 		//Wrestler Wrestler7 = new Wrestler();
 		//Wrestler Wrestler8 = new Wrestler();
-		Wrestler wrestlers[] = {wrestler1, wrestler2, wrestler3, wrestler4, wrestler5};
+		Wrestler wrestlers[] = {wrestler01, wrestler02, wrestler03, wrestler04, wrestler05, wrestler06, wrestler07, wrestler08, wrestler09, wrestler10};
 		
 		int attackingWrestler=(int)(Math.random()*totalWrestlers);
 		
@@ -52,11 +57,19 @@ public class Game {
 		int attributeChoice;
 		userInput.hasNextInt();
 		attributeChoice = userInput.nextInt();
+		while (attributeChoice>=6 || attributeChoice<=0) {
+			System.out.println("Please Enter correct choice");
+			userInput.hasNextInt();
+			attributeChoice = userInput.nextInt();			
+		}
 		
 		int defendingWrestler =(int)(Math.random()*totalWrestlers);
 		while (attackingWrestler == defendingWrestler) {
 			defendingWrestler =(int)(Math.random()*totalWrestlers);			
 		}
+		
+		System.out.println("Displaying "+defendingWrestler+"'s top card");
+		wrestlers[defendingWrestler].display();
 		
 		Wrestler defender=wrestlers[defendingWrestler];
 		boolean result = wrestlers[attackingWrestler].wrestle(attributeChoice, defender);
@@ -68,7 +81,7 @@ public class Game {
 			System.out.println("****"+playerDefending+" Wins****");
 		}
 		
-		userInput.close();		
+		userInput.close();
 	}
 
 }
